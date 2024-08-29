@@ -1,3 +1,6 @@
+#ifndef INC_RING_BUFFER_H_
+#define INC_RING_BUFFER_H_
+
 #include<array>
 #include<string>
 
@@ -38,3 +41,5 @@ std::ostream& operator<<(std::ostream& o, RingBuffer<T,N>& obj){
     }
 	return o;
 }
+
+#endif /*INC_RING_BUFFER_H_*/
