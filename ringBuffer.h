@@ -16,7 +16,7 @@ struct RingBuffer: public std::array<_Tp, _Nm>{
 
     void setHeadIndex(uint8_t num){
         headIndex = (headIndex+num)%_Nm;
-        lastIndex = (headIndex - 1) %_Nm;
+        lastIndex = (headIndex+_Nm - 1) %_Nm;
     }
 
     uint8_t *getBufferPtr(){
@@ -24,7 +24,7 @@ struct RingBuffer: public std::array<_Tp, _Nm>{
     }
 
     _Tp& operator[](int8_t __n) noexcept{
-    	return this->data()[(headIndex+__n)%_Nm];
+    	return this->data()[(headIndex+__n+_Nm)%_Nm];
     }
 private:
     uint8_t headIndex = 0;
