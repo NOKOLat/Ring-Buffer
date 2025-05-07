@@ -6,7 +6,6 @@
 
 template<typename _Tp, std::size_t _Nm>
 struct RingBuffer: public std::array<_Tp, _Nm>{
-    template<typename T=float>
 
     void push(_Tp value){
         this->data()[headIndex] = value;
